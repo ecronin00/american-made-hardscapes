@@ -73,8 +73,8 @@ nav img{
 .nav-links ul li{
    list-style: none;
    display: inline-block;
-   padding: 8px 25px;
-   padding-top: 30px;
+   padding: 8px 10px;
+   padding-top: 20px;
    position: relative;
 }
 .nav-links ul li a{
