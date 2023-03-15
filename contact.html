@@ -81,8 +81,8 @@
                 <input type="number" class="form-control" id="inputZip" required>
                 </div>
                 <div class="col-md-6">
-                <label for="inputPhone" class="form-label text-white">Phone Number</label>
-                <input type="tel" class="form-control" id="inputAddress" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                <label for="inputNumber" class="form-label text-white">Phone Number</label>
+                <input type="tel" class="form-control" id="inputNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
                 </div>
                 <div class="form-group">
                     <label for="message" class="form-label text-white">What can we do for you?</label>
@@ -126,12 +126,12 @@
                 inputLastName: document.getElementById('inputLastName').value,
                 inputEmail: document.getElementById('inputEmail').value,
                 inputZip: document.getElementById('inputZip').value,
-                inputAddress: document.getElementById('inputAddress').value,
+                inputNumber: document.getElementById('inputNumber').value,
                 message: document.getElementById('message').value
             }
-            document.write(document.getElementById("inputFirstName").value);
+            //document.write(document.getElementById("inputFirstName").value);
             emailjs.send("service_hpp1ey9", "template_4dj0mg3", params).then(function (response) {
-                alert("Success! " + response.status);
+                //alert("Success! " + response.status);
             })
             var email = require('emailjs');
         }
