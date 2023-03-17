@@ -16,7 +16,25 @@
 </head>
 
 <body class="ourwork-body">
-    <section class="header-ourwork">
+
+    <!-- for facebook embed-->
+
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '1345400302910457',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v16.0'
+          });
+        };
+      </script>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0" nonce="oKOdP3bQ"></script>
+    <!-- facebook embed script end-->
+
+    <section class="header">
         <nav>
             <a href="index.html"><img src="logo.jpeg"></a>
             <div class="nav-links" id="navLinks">
@@ -32,36 +50,22 @@
         </nav>
 
         <br>
-        <br>
-        <br>
+        
         <div class="ourwork-textbox">
-            <h1 class="ourwork-textbox">Our Work</h1>
+            <h1 class="ourwork-textbox">Posts</h1>
         </div>
+        <br>
+        <br>
+        <br>
+
+        <section class="main-content"> 
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAmericanMadeHardscapes&tabs=timeline&width=340&height=750&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1345400302910457" 
+            height="750" width="340"
+            style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </section>
 
     </section>
-
-    <section class="pictures">
-
-        <div class="row-pictures">
-            <div class="picture-col">
-                <img class="ourwork-image" src="retaining_wall.jpeg">
-                <h3>Picture 1</h3>
-                <p>This is a description for the picture.</p>
-            </div>
-            <div class="picture-col">
-                <img class="ourwork-image" src="awesome_square.jpeg">
-                <h3>Picture 2</h3>
-                <p>This is a description for the picture.</p>
-            </div>
-            <div class="picture-col">
-                <img class="ourwork-image" src="front_yard.jpeg">
-                <h3>Picture 3</h3>
-                <p>This is a description for the picture.</p>
-            </div>
-        </div>
-
-    </section>
-
 
     <section class="footer">
 
