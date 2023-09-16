@@ -1,8 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
+    <style>
+            /* CSS for the popup */
+            .popup-container {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4,9,30,0.7)); /* Semi-transparent background */
+                z-index: 1000;
+            }
+
+            .popup-button {
+                padding-top: 20px
+            }
+
+            .popup-box {
+                background: white;
+                border-radius: 10px;
+                padding-top: 20px;
+                text-align: center;
+            }
+
+            .access-question {
+                padding-bottom: 20px;
+            }
+
+            /* Additional styling for the question options */
+            .popup-options label {
+                display: block;
+                margin-bottom: 10px;
+                text-align: left;
+                padding-left: 100px;
+            }
+
+            /* Center the popup */
+            .popup-center {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .question-box {
+                background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4,9,30,0.7)); /* Semi-transparent white background */
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); /* Add a shadow */
+                max-width: 400px; /* Set a maximum width for the box */
+                margin: 0 auto; /* Center horizontally */
+            }
+    </style>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link href="styles.css" rel="stylesheet">
@@ -15,6 +72,7 @@
     </head>
 
     <body>
+    
         <section class="header">
             <nav>
                 <a href="index.html"><img src="logo.jpeg"></a>
@@ -29,14 +87,55 @@
                 </div>
                 <i class="fa fa-bars" onClick="showMenu()"></i>
             </nav>
+        </section>
 
-            <div class="text-box">
-                <h1>Over 10 years of experience <br> creating quality outdoor living spaces</h1>
-                <p>Now serving <br> eastern Tennessee!
-                </p>
-                <a href="contact.html" class="hero-btn">Contact us for a FREE estimate</a>
+        <section class="text-box">
+            <h1>Over 10 years of experience <br> creating quality outdoor living spaces</h1>
+            <p>Now serving <br> Eastern Tennessee!</p>
+            <a href="contact.html" class="hero-btn">Contact us for a FREE estimate</a>
+
+            <p></p>    
+
+            <div class="question-box">
+                <!-- Multiple-choice question -->
+                <section class="access-question">
+                    <p>Please select how you heard about us:</p>
+                    <form class="popup-options">
+                        <label><input type="radio" name="accessOption" value="Facebook"> Facebook</label>
+                        <label><input type="radio" name="accessOption" value="Google"> Google</label>
+                        <label><input type="radio" name="accessOption" value="Referral"> Referral</label>
+                        <label><input type="radio" name="accessOption" value="Existing Customer"> Existing Customer</label>
+                    </form>
+                    <div class="popup-button">
+                        <button onclick="checkOption()">Enter</button>
+                    </div>
+
+                </section>
+
+                <!-- JavaScript for handling the question -->
+                <script>
+                    // Function to check the selected option and proceed
+                    function checkOption() {
+                        var options = document.getElementsByName("accessOption");
+                        var selectedOption = null;
+                        for (var i = 0; i < options.length; i++) {
+                            if (options[i].checked) {
+                                selectedOption = options[i].value;
+                                break;
+                            }
+                        }
+
+                        if (selectedOption) {
+                            // You can perform actions based on the selected option here
+                            alert("Thank you for your selection: " + selectedOption);
+                        } else {
+                            alert("Please select an option to continue.");
+                        }
+                    }
+                </script>
             </div>
         </section>
+
 
 
         <section class="some-pictures">
@@ -57,22 +156,6 @@
             </div>
         </section>
 
-    <!---- JavaScript for menu toggling -->
-    <script>
-
-        var navLinks = document.getElementById("navLinks");
-
-        function showMenu(){
-            navLinks.style.right = "0" // edits the right value from css
-        }
-
-        function hideMenu(){
-            navLinks.style.right = "-250px";
-        }
-
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
-
 </html>
