@@ -13,6 +13,12 @@
     -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Our Work</title>
+    <style>
+        /* Custom CSS for dropdown menu items */
+        .dropdown-menu a.dropdown-item {
+            color: #333; /* Change to your desired text color */
+        }
+    </style>
 </head>
 
 <body class="ourwork-body">
@@ -23,7 +29,16 @@
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="our_work.html">OUR WORK</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" id="ourWorkDropdown">OUR WORK</a>
+                        <div class="dropdown-menu" aria-labelledby="ourWorkDropdown">
+                            <a class="dropdown-item" href="#patios">Patios</a>
+                            <a class="dropdown-item" href="#retainingwalls">Retaining Walls</a>
+                            <a class="dropdown-item" href="#firepits">Fire Pits</a>
+                            <a class="dropdown-item" href="#walkways">Walkways</a>
+                            <a class="dropdown-item" href="#lighting">Lighting</a>
+                        </div>
+                    </li>
                     <li><a href="blog.html">RECENT POSTS</a></li>
                     <li><a href="contact.html">CONTACT US</a></li>
                 </ul>
@@ -34,10 +49,87 @@
         <br>
         <br>
         <br>
-        <div class="ourwork-textbox">
-            <h1 class="ourwork-textbox">Our Work</h1>
-        </div>
 
+    </section>
+
+    <section id="patios" class="project-section-patios">
+        <h1>Patios</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>   <!-- Content for Patios -->
+    </section>
+
+    <section id="retainingwalls" class="project-section">
+        <h1>Retaining Walls</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>    <!-- Content for Retaining Walls -->
+    </section>
+
+    <section id="firepits" class="project-section">
+        <h1>Fire Pits</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>    <!-- Content for Fire Pits -->
+    </section>
+
+    <section id="walkways" class="project-section">
+        <h1>Walkways</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>    <!-- Content for Walkways -->
+    </section>
+
+    <section id="lighting" class="project-section">
+        <h1>Lighting</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>    <!-- Content for Lighting -->
     </section>
 
     <section class="pictures">
@@ -88,6 +180,28 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script>
+        // Add an event listener to handle the dropdown item clicks
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = event.target.getAttribute('href').substring(1); // Get the target section ID without the '#'
+                const targetSection = document.getElementById(targetId);
+    
+                // Scroll to the target section smoothly
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+    
+                // Close the dropdown menu (optional)
+                const dropdownMenu = document.querySelector('.dropdown-menu');
+                if (dropdownMenu) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
 
 </body>
 

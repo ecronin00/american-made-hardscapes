@@ -71,7 +71,9 @@
 nav{
    display: flex;
    padding: 2% 6%;
+   width: 100%;
    justify-content: space-between;
+   position: fixed;
    align-items: center;
    background-color:rgba(4, 9, 30, 0.9);
 }
@@ -222,6 +224,9 @@ p{
    width: 100%;
    height: 100%;
    text-align: center;
+}
+.project-section-patios{
+   margin-top: 150px;
 }
 /*------ footer ------*/
 
